@@ -1,0 +1,6 @@
+title: "NewsNow"
+description: "Local News and Updates"
+baseurl: ""
+url: "https://newsnow.xyz"
+theme: minima
+logo: "/assets/logo.png"
