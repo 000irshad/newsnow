@@ -1,126 +1,50 @@
-
 <!DOCTYPE html>
-<html lang="ml">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>NewsNow Malayalam</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
-  <style>
-    body {
-      font-family: 'Noto Sans Malayalam', sans-serif;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-    header {
-      text-align: center;
-      padding: 1rem;
-    }
-    header img {
-      max-height: 80px;
-    }
-    main {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 1rem;
-      flex: 1;
-      margin: 1rem;
-    }
-    .content {
-      display: flex;
-      flex-direction: column;
-    }
-    .article-card {
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 1rem;
-      margin-bottom: 1rem;
-      background: #fff;
-    }
-    aside {
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 1rem;
-      background: #f9f9f9;
-    }
-    aside h3 {
-      margin-top: 0;
-    }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      margin-top: auto;
-      font-size: 0.9rem;
-      color: #666;
-      background: #f0f0f0;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NewsNow - Local News</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Header -->
   <header>
-    <img src="news now.png" alt="NewsNow Logo">
-    <h1>ന്യൂസ് നൗ</h1>
-    <p>നിങ്ങളുടെ പ്രാദേശിക വാർത്താ പോർട്ടൽ</p>
-    <p><a href="https://newsnow.xyz" target="_blank">🌐 newsnow.xyz</a></p>
+    <h1>📰 NewsNow</h1>
+    <p>Your trusted source for local news</p>
   </header>
 
-  <main>
-    <div class="content">
-      <article class="article-card">
-        <h2>പ്രധാന വാർത്ത</h2>
-        <p>ഇവിടെ നിങ്ങളുടെ പ്രധാന വാർത്ത പ്രദർശിപ്പിക്കാം...</p>
+  <!-- Main layout -->
+  <div class="container">
+    <!-- News content -->
+    <main>
+      <article>
+        <h2>Sample Headline</h2>
+        <p>This is a sample local news article. Replace this with real news updates.</p>
       </article>
 
-      <article class="article-card">
-        <h2>പ്രാദേശിക വാർത്ത</h2>
-        <p>പ്രാദേശിക സംഭവവികാസങ്ങൾ ഇവിടെ...</p>
+      <article>
+        <h2>Another News Item</h2>
+        <p>Stay updated with the latest stories from your community.</p>
       </article>
+    </main>
 
-      <article class="article-card">
-        <h2>സ്പോർട്സ്</h2>
-        <p>സ്പോർട്സ് വാർത്തകൾ ഇവിടെ...</p>
-      </article>
-
-      <article class="article-card">
-        <h2>എഡിറ്റോറിയൽ</h2>
-        <p>എഡിറ്റോറിയൽ ഉള്ളടക്കം ഇവിടെ...</p>
-      </article>
-    </div>
-
+    <!-- Sidebar for Ads & RSS -->
     <aside>
-      <h3>RSS ഫീഡ്</h3>
-      <div id="rss-feed">ലോഡുചെയ്യുന്നു...</div>
-      <script>
-        async function loadRSS() {
-          try {
-            const response = await fetch("https://api.rss2json.com/v1/api.json?rss_url=https://www.manoramaonline.com/home/rss.html");
-            const data = await response.json();
-            const container = document.getElementById("rss-feed");
-            container.innerHTML = "";
-            data.items.slice(0,5).forEach(item => {
-              const div = document.createElement("div");
-              div.innerHTML = `<a href="${item.link}" target="_blank">${item.title}</a>`;
-              container.appendChild(div);
-            });
-          } catch (e) {
-            document.getElementById("rss-feed").innerText = "RSS ഫീഡ് ലോഡുചെയ്യാനായില്ല";
-          }
-        }
-        loadRSS();
-      </script>
+      <h3>Advertisement</h3>
+      <div class="ad-box">Ad Space 300x250</div>
 
-      <h3>പരസ്യങ്ങൾ</h3>
-      <div style="border:1px solid #ccc; padding:1rem; text-align:center; margin-bottom:1rem;">നിങ്ങളുടെ പരസ്യം ഇവിടെ</div>
-      <div style="border:1px solid #ccc; padding:1rem; text-align:center;">Ad Space</div>
+      <h3>RSS Feeds</h3>
+      <ul>
+        <li><a href="#">Malayalam Daily 1</a></li>
+        <li><a href="#">Malayalam Daily 2</a></li>
+        <li><a href="#">Malayalam Daily 3</a></li>
+      </ul>
     </aside>
-  </main>
+  </div>
 
+  <!-- Footer -->
   <footer>
-    <p>© 2025 NewsNow Malayalam. എല്ലാ അവകാശങ്ങളും സംരക്ഷിതമാണ്. | <a href="https://newsnow.xyz" target="_blank">newsnow.xyz</a></p>
+    <p>© 2025 NewsNow | Powered by GitHub Pages</p>
   </footer>
 </body>
 </html>
-
-<!-- CNAME file for GitHub Pages custom domain -->
-<!-- Place a file named CNAME (no extension) in the repo root with the content: newsnow.xyz -->
